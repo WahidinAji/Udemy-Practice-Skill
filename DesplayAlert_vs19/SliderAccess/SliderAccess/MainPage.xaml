@@ -4,15 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="DesplayAlert_vs19.MainPage">
+             x:Class="SliderAccess.MainPage">
 
-    <StackLayout>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-        <Label />
-        <Button Text="Click Me for information" Clicked="Button_Clicked"/>
+        <Label FontSize="Title" Text="Hello World" x:Name="label"/>
+        <Slider ValueChanged="Slider_ValueChanged" x:Name="slider"/>
     </StackLayout>
 
 </ContentPage>
