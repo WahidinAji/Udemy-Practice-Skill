@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SimpleCodeInXaml.MainPage">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <!-- Data binding dalam satu file .xaml -->
+        <Label Text="{Binding 
+            Source={x:Reference slider}, 
+            Path=Value, 
+            StringFormat='The Value is {0:F3}'}" 
+            Opacity="{Binding Source={x:Reference slider}, Path=Value}" x:Name="label"/>
+        <Slider  x:Name="slider"/>
+        
+        <!--Binding Context -> intiny adalah memperpendek atau merapikan kode dari data binding diatas. 
+        ketika ada duplikasi kode yang seharusnya bisa dipersingkat atau diikat dijadikan 1-->
+        <BoxView Color="Green" Opacity="{Binding Source={x:Reference slider2}, Path=Value}"/>
+        <Label BindingContext="{x:Reference slider2}" 
+               Text="{Binding Value, StringFormat='The value is {0:F2}'}"
+               Opacity="{Binding Value}" x:Name="label2"/>
+        <Slider x:Name="slider2"/>
+        
+        <!--Dan ini adalah lebih sederhananya lagi, jangan sampai lup binding value untuk nilai data pengikat tersebut-->
+        <StackLayout BindingContext="{x:Reference slider3}" HorizontalOptions="Center" VerticalOptions="Center">
+            <BoxView Color="Green" Opacity="{Binding Value}"/>
+            <Label 
+               Text="{Binding Value, StringFormat='The value is {0:F2}'}"
+               Opacity="{Binding Value}"/>
+            <Slider x:Name="slider3"/>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
