@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SimpleExercise.Views.Page3">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+
+            <Button Text="Next" BackgroundColor="Green" 
+                    Clicked="Button_Clicked" TextColor="Black" 
+                    CornerRadius="20" Padding="0,0,0,0"/>
+
+            <StackLayout BindingContext="{x:Reference slider}">
+                <Label Text="{Binding Value, StringFormat='Font Size : {0}'}" 
+                   FontSize="{Binding Value}"/>
+
+                <Slider x:Name="slider" Maximum="24" Minimum="16"/>
+
+                <Label Text="{Binding Value, 
+                StringFormat='Jika engkau ingin cepat dipahamkan oleh Allah, orang lain baca/lihat 10x belum ingat, anda baru lihat 1x langsung ingat. maka kuncinya adalah dekati yang sang pencipta. orang lain tidur jam 3 pagi, anda bangun untuk sholat tahajud. tingkatkan terus taqwa anda, 3x lipat dari sebelumnya. Insya allah dimudahkan oleh Allah Subhanalahu wata ala, Aamiin. - UAH'}"
+                   FontSize="{Binding Value}"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

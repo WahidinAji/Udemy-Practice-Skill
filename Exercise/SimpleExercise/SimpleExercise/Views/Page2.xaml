@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SimpleExercise.Views.Page2">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+
+            <Button Text="Next" BackgroundColor="Green" 
+                    Clicked="Button_Clicked" TextColor="Black" 
+                    CornerRadius="20" Padding="0,0,0,0"/>
+
+            <StackLayout BindingContext="{x:Reference slider}">
+                <Label Text="{Binding Value, StringFormat='Font Size : {0}'}" 
+                   FontSize="{Binding Value}"/>
+
+                <Slider x:Name="slider" Maximum="24" Minimum="16"/>
+
+                <Label Text="{Binding Value, 
+                StringFormat='Kejarlah dunia, tapi engkau tidak akan mendapat akhirat. Kejarlah Akhirat, maka engkau akan mendapatkan Akhirat + dunia + ridho Allah. Insya allah, Aamiin - UAH'}"
+                   FontSize="{Binding Value}"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

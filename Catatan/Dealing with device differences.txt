@@ -1,0 +1,46 @@
+Dealing with deice differences = >
+
+megatur halaman padding pada xamarin (0,0,0,0) => (left, top, right, bottom)
+untuk target platform tertentu 
+if (device.OS == targetPlatform,iOS)
+	padding = new Thickneww(0,20,0,0); didalam iOS platform, selalu menambahkan 20px agar sama dengan yang ada diandroid
+atau saat di debug maupun dibuilt in application.
+
+ini adalah contoh jika kita ingin membedakan ketebalan padding pada setiap platform,
+if (device.OS == targetPlatform,iOS)
+	padding = new Thickness(0,20,0,0);
+else if (device.OS == targetPlatform,Android)
+	padding = new Thickness(10,20,0,0);
+else if (device.OS == targetPlatform,WinPhone)
+	padding = new Thickness(30,20,0,0);
+
+tetapi ada yang lebih ringkas, seperti ini contohnya
+Padding = Devise.OnPlatform(
+	iOS: new Thickness(0,20,0,0)
+	Android: new Thickness(20,20,0,0)
+	WinPhone: new Thickness(30,20,0,0)
+);
+
+Property Element Syntax
+<ContentPage.Padding>
+	<OnPlatform x:TypeArguments="Thickness" //baris ini pada xml sama dengan code C# yang ada dibawah
+		iOS="">
+	<OnPlatforms
+</ContentPage.Padding>
+
+var x = new Platform<Thickness>(
+	Android = new Thickness (0,0,0,0)
+	iOS = new Thickness (0,0,0,0)
+);
+
+XAML Compilation
+ketika ada kesalahan atau typo pada pengetikan kode dilembar xml, maka tidak akan diberitahukan pada saat running in debug.
+cara agar kita dicegah biar bisa mengetahuui letak kesalahan pada lembar xml adalah dengan menambahkan attribut pada folder
+Properties => AssemblyInfo.cs
+	kemudian tambahkan code
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+dan sekarang kita akan mendapatkannya pada saat Runtime atau debug project. Jangan lupa untuk memasukkan namespacenya, 
+using Xamarin.Forms.Xaml;.
+Attribut ini juga bisa ditambahkan pada setiap Code Behind page yang ada. semisal ada di ContentPage.cs, maka tambahkan 
+=> [XamlCompilation(XamlCompilationOptions.Skip)] 
+diatas => public partil class Page : Page{}
