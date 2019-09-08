@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="StackLayout.MainPage" BackgroundColor="#127ac7">
+
+    <StackLayout VerticalOptions="Center">
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Xamarin" FontSize="20"  FontAttributes="Bold"  HorizontalOptions="Center"/>
+        <Label Text="Cross-Platform apps made easy" FontSize="18"  HorizontalOptions="Center"/>
+        <Button Text="Login" BackgroundColor="#1dabf0"  HorizontalOptions="Fill"/>
+        <Button Text="Register" BackgroundColor="#1dabf0"  HorizontalOptions="Fill"/>
+    </StackLayout>
+
+</ContentPage>
