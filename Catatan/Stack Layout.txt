@@ -1,0 +1,8 @@
+StackLayout
+nilai default dari spacing = 6,6
+Padding adalah jumlah ruang antara tata letak dan element yang ada didalam stacklayout atau layout lainnya
+Orientation nilai defaultnya adalah vertikal, tapi kita bisa mengatur secara horizontal
+
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Xamarin\AndroidDeviceManager\SystemSkins\nexus_5
+
+
