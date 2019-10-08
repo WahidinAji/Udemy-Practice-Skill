@@ -10,7 +10,7 @@ namespace DesplayAlert_vs19
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Views.GridPage();
         }
 
         protected override void OnStart()
